@@ -1607,7 +1607,8 @@ button,
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0 0 2em -3em;
-  width: calc(100% + 3em); }
+  /* width: calc(100% + 3em); } */
+  width: 100%; }
   .features article {
     -moz-align-items: center;
     -webkit-align-items: center;
@@ -1617,9 +1618,10 @@ button,
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
+    justify-content: center;
     margin: 0 0 3em 3em;
     position: relative;
-    width: calc(50% - 3em); }
+    width: 100%; }
     .features article:nth-child(2n - 1) {
       margin-right: 1.5em; }
     .features article:nth-child(2n) {
