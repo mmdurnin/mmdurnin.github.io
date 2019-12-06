@@ -2288,3 +2288,13 @@ button,
   color: rgb(245,105,106);
   font-size: 50px;
 }
+
+
+/* other */
+/* .revealed {
+
+} */
+
+.concealed {
+  display: none;
+}
