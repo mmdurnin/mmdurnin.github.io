@@ -69,17 +69,33 @@
 
 				});
 
+	// Profile picture
+	var $profile_pic = $('#profile-pic');
+
 	// Sidebar.
 		var $sidebar = $('#sidebar'),
 			$sidebar_inner = $sidebar.children('.inner');
 
 		// Inactive by default on <= large.
+			breakpoints.on('<=medium', function () {
+				$profile_pic.removeClass('over-medium');
+				$profile_pic.addClass('over-small');
+			})
+
+			breakpoints.on('>medium', function () {
+				$profile_pic.removeClass('over-small');
+				$profile_pic.addClass('over-medium');
+			})
+
 			breakpoints.on('<=large', function() {
 				$sidebar.addClass('inactive');
+				$profile_pic.addClass('over-medium');
 			});
 
 			breakpoints.on('>large', function() {
 				$sidebar.removeClass('inactive');
+				$profile_pic.removeClass('over-medium');
+				$profile_pic.addClass('over-large')
 			});
 
 		// Hack: Workaround for Chrome/Android scrollbar position bug.
@@ -99,6 +115,8 @@
 
 					// Toggle.
 						$sidebar.toggleClass('inactive');
+						// Size down profile pic when sidebar is inactive
+						$profile_pic.toggleClass('over-medium');
 
 				});
 
@@ -126,6 +144,9 @@
 
 					// Hide sidebar.
 						$sidebar.addClass('inactive');
+
+					// Shrink pfile picture
+						$profile_pic.addClass('over-medium');
 
 					// Redirect to href.
 						setTimeout(function() {
@@ -160,6 +181,9 @@
 
 					// Deactivate.
 						$sidebar.addClass('inactive');
+
+					// Reduce profile pic
+						$profile_pic.addClass('over-medium');
 
 				});
 

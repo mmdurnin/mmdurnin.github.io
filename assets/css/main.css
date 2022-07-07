@@ -1255,7 +1255,31 @@ a.image {
     -moz-transform: scale(1.075);
     -webkit-transform: scale(1.075);
     -ms-transform: scale(1.075);
-    transform: scale(1.075); }
+    transform: scale(1.075); 
+  }
+
+#profile-pic {
+  transition: transform 0.5s ease, margin-top 0.5s ease;
+}
+
+#banner #profile-pic-holder #profile-pic.over-small {
+  object-position: bottom;
+}
+
+#profile-pic.over-large {
+  transform: scale(0.8);
+  margin-top: -10px;
+}
+
+#profile-pic.over-medium {
+  transform: scale(0.7);
+  margin-top: -80px;
+}
+
+#profile-pic.over-small {
+  transform: scale(1);
+  margin-top: 0px;
+}
 
 /* List */
 ol {
@@ -1339,61 +1363,84 @@ ul.actions {
     ul.actions.fit.stacked {
       width: 100%; }
 
-/* Icons */
+/* HEADER Icons */
 ul.icons {
   cursor: default;
   list-style: none;
-  padding-left: 0; }
-  ul.icons li {
-    display: inline-block;
-    padding: 0 1em 0 0; }
-    ul.icons li:last-child {
-      padding-right: 0; }
-    ul.icons li .icon {
-      color: inherit; }
-      ul.icons li .icon:before {
-        font-size: 1.25em; }
+  padding-left: 0; 
+}
+ul.icons li {
+  display: inline-block;
+  padding: 0 1em 0 0; 
+}
+ul.icons li:last-child {
+  padding-right: 0; 
+}
+ul.icons li .icon {
+  color: inherit; 
+}
+ul.icons li .icon:before {
+  font-size: 1.25em; 
+}
 
 /* Contact */
 ul.contact {
   list-style: none;
-  padding: 0; }
-  ul.contact li {
-    text-decoration: none;
-    border-top: solid 1px rgba(210, 215, 217, 0.75);
-    margin: 1.5em 0 0 0;
-    padding: 1.5em 0 0 3em;
-    position: relative; }
-    ul.contact li:before {
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      display: inline-block;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      line-height: 1;
-      text-transform: none !important;
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 400; }
-    ul.contact li:before {
-      color: #f56a6a;
-      display: inline-block;
-      font-size: 1.5em;
-      height: 1.125em;
-      left: 0;
-      line-height: 1.125em;
-      position: absolute;
-      text-align: center;
-      top: 1em;
-      width: 1.5em; }
-    ul.contact li:first-child {
-      border-top: 0;
-      margin-top: 0;
-      padding-top: 0; }
-      ul.contact li:first-child:before {
-        top: 0; }
-    ul.contact li a {
-      color: inherit; }
+  padding: 0; 
+  margin: 0;
+}
+ul.contact li {
+  text-decoration: none;
+  border-top: solid 1px rgba(210, 215, 217, 0.75);
+  margin: 0 0 0 0;
+  padding: 1.5em 0 1.5em 3em;
+  position: relative; 
+}
+/* peachy pink icons in the side bar (contact info) */
+ul.contact li:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400; 
+}
+/* peachy pink icons in the side bar (contact info) */
+ul.contact li:before {
+  color: #f56a6a;
+  display: inline-block;
+  font-size: 1.5em;
+  height: 1.125em;
+  left: 0;
+  line-height: 1.125em;
+  position: absolute;
+  text-align: center;
+  top: 1em;
+  width: 1.5em; 
+}
+/* email + icon line in the sidebar */
+ul.contact li:first-child {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0; 
+}
+ul.contact li:first-child:before {
+  top: 0; 
+}
+ul.sidebar-icons {
+  margin: 0;
+}
+ul.sidebar-icons a {
+  padding: 0 0.5em 0 0.5em;
+  font-size: 20px;
+}
+ul.contact li a {
+  color: inherit; 
+}
 
 /* Pagination */
 ul.pagination {
