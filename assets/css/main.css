@@ -1170,6 +1170,13 @@ input[type="radio"] + label:before {
   color: #9fa3a6 !important;
   opacity: 1.0; }
 
+.hidden {
+  visibility: hidden;
+}
+:not(.hidden) {
+  visibility: visible;
+}
+
 /* Box */
 .box {
   border-radius: 0.375em;

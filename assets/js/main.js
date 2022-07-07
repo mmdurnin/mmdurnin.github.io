@@ -71,6 +71,7 @@
 
 	// Profile picture
 	var $profile_pic = $('#profile-pic');
+	var $lets_talk_button = $('#lets-talk');
 
 	// Sidebar.
 		var $sidebar = $('#sidebar'),
@@ -90,12 +91,14 @@
 			breakpoints.on('<=large', function() {
 				$sidebar.addClass('inactive');
 				$profile_pic.addClass('over-medium');
+				$lets_talk_button.addClass('hidden');
 			});
 
 			breakpoints.on('>large', function() {
 				$sidebar.removeClass('inactive');
 				$profile_pic.removeClass('over-medium');
-				$profile_pic.addClass('over-large')
+				$profile_pic.addClass('over-large');
+				$lets_talk_button.removeClass('hidden');
 			});
 
 		// Hack: Workaround for Chrome/Android scrollbar position bug.
@@ -159,6 +162,12 @@
 						}, 500);
 
 				});
+
+			// Let's talk button click
+			$lets_talk_button.on('click', function() {
+				$sidebar.removeClass('inactive')
+			})
+
 
 			// Prevent certain events inside the panel from bubbling.
 				$sidebar.on('click touchend touchstart touchmove', function(event) {
